@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gobile & Associates | AI Legal Assistant</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+	<style>
+	      body {
+	          font-family: Arial, sans-serif;
+	          margin: 40px;
+	          background: #f4f4f4;
+	      }
+
+	      .container {
+	          background: white;
+	          padding: 30px;
+	          border-radius: 10px;
+	      }
+
+	      input, textarea, select {
+	          width: 100%;
+	          padding: 10px;
+	          margin-bottom: 20px;
+	      }
+
+	      button {
+	          background: #1e3a8a;
+	          color: white;
+	          border: none;
+	          padding: 12px 20px;
+	          cursor: pointer;
+	      }
+	  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+
+<header class="top-bar">
+    <div class="brand">
+        <h1>Gobile & Associates Incorporated</h1>
+        <span>Attorneys • Legal Advisors • Litigation</span>
+    </div>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="container">
+
+    <section class="intro">
+        <h2>AI Legal Drafting Assistant</h2>
+        <p>
+            Generate professionally drafted South African legal documents
+            for attorney review and refinement.
+        </p>
+    </section>
+
+    <section class="card">
+		<form action="/generate" method="post">
+
+		    <label>Practice Area</label>
+		    <select name="caseType">
+				<option value="CIVIL_LITIGATION">Civil Litigation</option>
+		        <option value="CRIMINAL">Criminal Law</option>
+		        <option value="COMMERCIAL">Commercial Law</option>
+		        <option value="ADVISORY">Legal Advisory</option>
+		    </select>
+
+		    <label>Document Type</label>
+		    <select name="documentType">
+				<option value="Particulars of Claim">Particulars of Claim</option>
+				<option value="Plea">Plea</option>
+				<option value="Notice of Motion">Notice of Motion</option>
+				<option value="Founding Affidavit">Founding Affidavit</option>
+				<option value="Summary Judgment">Summary Judgment</option>
+				<option value="Exception">Exception</option>
+				<option value="Replication">Replication</option>
+				<option value="Discovery Notice">Discovery Notice</option>
+				<option value="Urgent Application">Urgent Application</option>
+				<option value="Settlement Agreement">Settlement Agreement</option>
+		        <option value="Bail Application">Bail Application</option>
+		        <option value="Legal Opinion">Legal Opinion</option>
+		        <option value="Letter of Demand">Letter of Demand</option>
+		        <option value="Service Agreement">Service Agreement</option>
+		        <option value="NDA">Non-Disclosure Agreement</option>
+		    </select>
+
+		    <label>Client Name</label>
+		    <input type="text" name="clientName" />
+
+		    <label>Opposing Party</label>
+		    <input type="text" name="opposingParty" />
+
+		    <label>Jurisdiction</label>
+		    <input type="text" name="jurisdiction" />
+
+		    <label>Relief Sought</label>
+		    <input type="text" name="reliefSought" />
+
+		    <label>Facts / Instructions</label>
+		    <textarea name="facts" rows="10"></textarea>
+
+		    <label>Additional Notes</label>
+		    <textarea name="additionalNotes" rows="5"></textarea>
+
+		    <button type="submit">Generate Legal Document</button>
+
+		</form>
+    </section>
+
+    <p class="disclaimer">
+        This tool generates preliminary legal drafts for internal use only.
+        All outputs remain subject to attorney review and professional judgment.
+    </p>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+    © 2026 Gobile & Associates Incorporated | AI-assisted drafting for legal professionals
+</footer>
+
+</body>
+</html>

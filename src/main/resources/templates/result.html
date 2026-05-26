@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Generated Legal Draft</title>
+    <link rel="stylesheet" th:href="@{/styles.css}">
+</head>
+<body>
+
+	<div class="container">
+
+	    <h2>Generated Legal Document</h2>
+
+	    <pre th:text="${document}"></pre>
+
+	    <br/>
+
+	    <a href="/">Generate Another Document</a>
+
+	</div>
+	
+	<form action="/download-pdf" method="get">
+
+	    <input type="hidden"
+	           name="title"
+	           th:value="${caseForm.documentType}" />
+
+	    <input type="hidden"
+	           name="content"
+	           th:value="${document}" />
+
+	    <button type="submit">
+	        Download PDF
+	    </button>
+
+	</form>
+
+</body>
+</html>
